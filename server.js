@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const router = require("./network/routes");
 const db = require("./db");
 
+
 var app = express();
 
 app.use(bodyParser.json());
@@ -18,6 +19,9 @@ const url_db =
 db(url_db);
 
 router(app);
+
+// Handlebars
+app.set('view engine', 'hbs');
 
 // Static files
 app.use("/", express.static("public"));
