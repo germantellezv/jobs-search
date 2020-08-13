@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+var cors = require("cors");
 const router = require("./network/routes");
 const db = require("./db");
-
 
 var app = express();
 
@@ -12,6 +12,7 @@ app.use(
     extended: false,
   })
 );
+app.use(cors());
 
 // DB
 const url_db =
@@ -21,7 +22,7 @@ db(url_db);
 router(app);
 
 // Handlebars
-app.set('view engine', 'hbs');
+app.set("view engine", "hbs");
 
 // Static files
 app.use("/", express.static("public"));
