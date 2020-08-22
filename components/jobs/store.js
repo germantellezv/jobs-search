@@ -7,9 +7,11 @@ function listUsers() {
 
 async function getJob(job_id) {
   let filter = {
-    ID: job_id,
+    // ID: job_id,
+    'Id': job_id,
   };
   let result = await Model.find(filter).exec();
+
   return result;
 }
 

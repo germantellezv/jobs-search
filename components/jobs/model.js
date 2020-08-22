@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-  ID: Number,
+  Id: Number,
   "Job Title": String,
   "Salary Estimate": String,
   "MAX Salary Estimate": String,
@@ -20,7 +20,9 @@ const mySchema = new Schema({
   Revenue: String,
   Competitors: String,
   "Easy Apply": String,
+  Profile: String,
   Skills: String,
+  images: String,
 })
 
 
