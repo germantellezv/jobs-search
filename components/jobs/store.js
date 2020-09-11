@@ -15,15 +15,13 @@ async function getJob(job_id) {
   return result;
 }
 
-function filterByLocation(location) {
-  let filter = {
-    location: location,
-  };
-  return Model.find(filter).exec();
+async function getSome(amount) { 
+  let result = await Model.find().sort().limit(parseInt(amount))
+  return result
 }
 
 module.exports = {
   list: listUsers,
   get: getJob,
-  filterByLocation: filterByLocation,
+  getSome: getSome,
 };

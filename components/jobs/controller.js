@@ -8,12 +8,12 @@ function getJob(job_id) {
   return store.get(job_id);
 }
 
-function getJobByLocation(location) {
-  return store.filterByLocation(location);
+function getSome(amount) {
+  return store.getSome(amount)
 }
 
 module.exports = {
   list: listJobs,
   get: getJob,
-  getJobByLocation: getJobByLocation,
+  getSome:getSome,
 };

@@ -7,14 +7,13 @@ const controller = require("./controller");
 
 // ROUTES
 router.get("/", listJobs);
-router.get("/:id", getJob);
-router.get("/filter/location/:location", filterByLocation);
+router.get("/id/:id", getJob);
+router.get("/some/:amount", getSomeJobs)
 
-function filterByLocation(req, res) {
-  console.log(req.params.locations);
-  controller.getJobByLocation()
-  .then(job => {
-    response.success(req, res, job, 200)
+function getSomeJobs(req, res) {
+  const amount = req.params.amount
+  controller.getSome(amount).then(jobs => {
+    response.success(req, res, jobs, 200)
   })
   .catch(err => {
     response.error(req, res, "Error inesperado", 400)

@@ -24,6 +24,9 @@ const mySchema = new Schema({
   Skills: String,
   Images: String,
   Time: String,
+  Benefitis: String,
+  Responsibilities: String,
+  Qualifications: String,
 })
 
 
